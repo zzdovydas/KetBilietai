@@ -1,4 +1,4 @@
-package com.ketbilietaiproject;
+package com.zdevstudio.ketbilietai;
 
 import com.facebook.react.ReactActivity;
 

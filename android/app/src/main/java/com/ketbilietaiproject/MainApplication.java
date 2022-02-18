@@ -1,4 +1,4 @@
-package com.ketbilietaiproject;
+package com.zdevstudio.ketbilietai;
 
 import android.app.Application;
 import android.content.Context;
