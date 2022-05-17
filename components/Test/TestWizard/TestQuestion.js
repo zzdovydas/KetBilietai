@@ -39,7 +39,9 @@ const TestQuestion = ({ navigation, questions, page }) => {
                 <Text style={styles.questionCountText}>Klausimas: {(questionIndex + 1)} iš {questions.length}</Text>
             </View>
             <View style={styles.viewContainer}>
-                <Image style={styles.imageContainer} source={{ uri: questions[questionIndex].questioN_IMG_URL }} />
+                {questions[questionIndex].questioN_IMG_URL != "" &&
+                    <Image style={styles.imageContainer} source={{ uri: questions[questionIndex].questioN_IMG_URL }} />
+                    }
                 <Text style={styles.textContainer}>{questions[questionIndex].questioN_NAME}</Text>
             </View>
             <View style={styles.viewContainer2}>
@@ -106,7 +108,7 @@ const styles = StyleSheet.create(
             marginTop: 5
         },
         imageContainer: {
-            width: 220,
+            width: 360,
             height: 220,
         },
         questionContainer: {
