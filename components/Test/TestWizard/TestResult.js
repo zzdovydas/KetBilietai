@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { MMKVLoader } from "react-native-mmkv-storage";
 import { View, Text, Image, TouchableOpacity, StyleSheet, FlatList } from "react-native";
 
 
@@ -10,7 +11,19 @@ const TestResult = ({ navigation, route }) => {
     let questionCount = questionEdit.length;
     let correctAnswers = questions.correctAnswers != null ? questions.correctAnswers : 0;
 
-    console.log(questions);
+    const MMKV = new MMKVLoader().initialize();
+
+    const getCurrentDate= () =>{
+
+        var date = new Date().getDate();
+        var month = new Date().getMonth() + 1;
+        var year = new Date().getFullYear();
+        var hours = new Date().getHours(); //To get the Current Hours
+        var min = new Date().getMinutes(); //To get the Current Minutes
+        var sec = new Date().getSeconds(); //To get the Current Seconds
+  
+        return date + '-' + month + '-' + year + " " + hours + ':' + min + ':' + sec;
+  }
 
     function getCorrectAnswers() {
         let isAnswerCorrect = true;
@@ -30,10 +43,36 @@ const TestResult = ({ navigation, route }) => {
                 questionEdit[i].isAnswerCorrect = true;
             }
             else { questionEdit[i].isAnswerCorrect = false; }
-            console.log(i)
         }
         questions.length == 0 ? setQuestions(questionEdit) : console.log(questions);
+        let res = [];
+
+        MMKV.getArray("results", (error, result) => {
+            if (error) {
+                console.log(error);
+                return;
+            }
+
+            if (result != null)
+                res = result;
+
+            console.log(res); // logs array
+        });
+
+        result = {time: getCurrentDate(), totalQuestions: questionEdit.length, totalCorrectAnswers: correctAnswers}
+
+        res.push(result);
+
+        MMKV.setArray("results", res, (error, result) => {
+            if (error) {
+                console.log(error);
+                return;
+            }
+
+            console.log(result);
+        });
     }
+
 
     useEffect(() => {
         getCorrectAnswers();
@@ -59,10 +98,10 @@ const TestResult = ({ navigation, route }) => {
                         renderItem={({ item, index }) => {
                             return (
                                 <TouchableOpacity style={item.isAnswerCorrect ? styles.questionItemGreen : styles.questionItemRed}>
-                                    <Text style={styles.answerText}>{index+1}</Text>
+                                    <Text style={styles.answerText}>{index + 1}</Text>
                                 </TouchableOpacity>
                             )
-                        }}  />
+                        }} />
                 </View>
                 <View style={styles.buttonBottomStyleContainer}>
                     <TouchableOpacity style={styles.bottomQuestionNavigationButton} onPress={() => navigation.navigate('Pagrindinis langas')}>

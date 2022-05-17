@@ -3,7 +3,6 @@ import TestTimer from "./TestTimer.js";
 import TestQuestion from "./TestQuestion.js";
 import { Button, Text, View, StyleSheet } from "react-native";
 
-
 const TestWizard = ({ navigation, route }) => {
 
     const futureTime = new Date().getTime() / 1000 + 1802;

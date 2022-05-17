@@ -106,8 +106,8 @@ const styles = StyleSheet.create(
             marginTop: 5
         },
         imageContainer: {
-            width: 180,
-            height: 180,
+            width: 220,
+            height: 220,
         },
         questionContainer: {
             flex: 18,
