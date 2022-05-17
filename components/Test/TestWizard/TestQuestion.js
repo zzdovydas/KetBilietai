@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet, FlatList } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
+import CheckBox from '@react-native-community/checkbox';
 
 const TestQuestion = ({ navigation, questions, page }) => {
 
@@ -10,9 +11,11 @@ const TestQuestion = ({ navigation, questions, page }) => {
     function toggleAnswers(index) {
 
         questions[questionIndex].answers[index].selected == 1 ? questions[questionIndex].answers[index].selected = 0 : questions[questionIndex].answers[index].selected = 1;
-
+        console.log("lalalala");
         setRefresh(refresh + 1);
     }
+
+    console.log(questions[questionIndex])
 
     function setPage(num) {
         if (questionIndex > 0 && questionIndex < (questions.length - 1)) {
@@ -24,7 +27,7 @@ const TestQuestion = ({ navigation, questions, page }) => {
             setRefresh(refresh + 1);
         }
         else if (questionIndex >= (questions.length - 1) && num > 0) {
-            navigation.replace('Testo rezultatas', {questions});
+            navigation.replace('Testo rezultatas', { questions });
         }
         else {
         }
@@ -36,17 +39,23 @@ const TestQuestion = ({ navigation, questions, page }) => {
                 <Text style={styles.questionCountText}>Klausimas: {(questionIndex + 1)} iš {questions.length}</Text>
             </View>
             <View style={styles.viewContainer}>
-                <Image style={styles.imageContainer} source={{ uri: questions[questionIndex].imageUrl }} />
-                <Text style={styles.textContainer}>{questions[questionIndex].questionName}</Text>
+                <Image style={styles.imageContainer} source={{ uri: questions[questionIndex].questioN_IMG_URL }} />
+                <Text style={styles.textContainer}>{questions[questionIndex].questioN_NAME}</Text>
             </View>
             <View style={styles.viewContainer2}>
                 <FlatList
                     data={questions[questionIndex].answers}
                     renderItem={({ item, index }) => {
                         return (
-                            <TouchableOpacity style={item.selected == null ? styles.buttonUnselected : item.selected == 0 ? styles.buttonUnselected : styles.buttonSelected} onPress={() => toggleAnswers(index)}>
-                                <Text style={styles.answerText}>{item.answerName}</Text>
-                            </TouchableOpacity>);
+                            <View style={styles.answerItemView}>
+                                <CheckBox
+                                    disabled={false}
+                                    value={item.selected == null ? false : item.selected == 0 ? false : true}
+                                    onValueChange={() => toggleAnswers(index)}
+                                />
+                                <Text style={styles.answerText}>{item.answeR_NAME}</Text>
+                            </View>
+                        )
                     }} />
             </View>
             <View style={styles.buttonBottomStyleContainer}>
@@ -104,6 +113,10 @@ const styles = StyleSheet.create(
             flex: 18,
             flexDirection: "column",
             justifyContent: 'flex-start'
+        },
+        answerItemView: {
+            marginTop: 20,
+            flexDirection: "row",
         },
         viewContainerQuestionCount: {
             height: 28,
