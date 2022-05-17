@@ -12,10 +12,6 @@ const TestResult = ({ navigation, route }) => {
 
     console.log(questions);
 
-    function range(start, end) {
-        return Array(end - start + 1).fill().map((_, idx) => start + idx)
-    }
-
     function getCorrectAnswers() {
         let isAnswerCorrect = true;
         for (let i = 0; i < questionCount; i++) {
@@ -43,6 +39,8 @@ const TestResult = ({ navigation, route }) => {
         getCorrectAnswers();
     }, [])
 
+
+
     if (questions.length < 1) {
         return (<View style={styles.viewContainer}>
             <Text style={styles.questionCountText}>Loading results...</Text>
@@ -52,19 +50,19 @@ const TestResult = ({ navigation, route }) => {
         return (
             <View style={styles.questionContainer}>
                 <View style={styles.viewContainer}>
-                    <Text style={styles.questionCountText}>Rezultatas {correctAnswers} iš {questionCount}</Text>
+                    <Text style={styles.questionCountText}>Rezultatas {correctAnswers} iš {questions.length}</Text>
                 </View>
                 <View style={styles.reviewContainer}>
                     <FlatList
-                        data={range(1, questionCount + 1)}
+                        data={questions}
                         horizontal={true}
                         renderItem={({ item, index }) => {
                             return (
-                                <TouchableOpacity style={[questions[index].isAnswerCorrect ? styles.questionItemGreen : styles.questionItemRed]}>
-                                    <Text style={styles.answerText}>{item}</Text>
+                                <TouchableOpacity style={item.isAnswerCorrect ? styles.questionItemGreen : styles.questionItemRed}>
+                                    <Text style={styles.answerText}>{index+1}</Text>
                                 </TouchableOpacity>
                             )
-                        }} />
+                        }}  />
                 </View>
                 <View style={styles.buttonBottomStyleContainer}>
                     <TouchableOpacity style={styles.bottomQuestionNavigationButton} onPress={() => navigation.navigate('Pagrindinis langas')}>
