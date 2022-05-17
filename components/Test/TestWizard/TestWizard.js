@@ -8,7 +8,7 @@ const TestWizard = ({ navigation, route }) => {
     const futureTime = new Date().getTime() / 1000 + 1802;
 
     const getMoviesFromApi = (questions) => {
-        fetch('http://192.168.0.3:5271/question/getrandquestions?questionCount=30')
+        fetch('http://5.20.238.159/question/getrandquestions?questionCount=30')
           .then((response) => response.json())
           .then((json) => {
             setQuestions(json);
