@@ -1,6 +1,8 @@
 import React from "react";
-import { Text, FlatList } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
 import { MMKVLoader } from "react-native-mmkv-storage";
+import { ProgressBar, Colors } from 'react-native-paper';
+
 
 const Results = ({ navigation, route }) => {
     console.log(JSON.stringify(route.params.list));
@@ -22,10 +24,118 @@ const Results = ({ navigation, route }) => {
     });
 
     return (
-        <FlatList
-        data={res}
-        renderItem={({item}) => <Text>{item.totalQuestions}    {item.totalCorrectAnswers}    {(item.totalCorrectAnswers/item.totalQuestions*100)}</Text>} />
+        <View style={styles.mainContainer}>
+            <View style={styles.resultsContainer}>
+                <View style={styles.introContainer}>
+                    <View style={styles.tabContainer}></View>
+                    <View style={styles.headerTextContainer}></View>
+                    <Text style={styles.headerText}>Rezultatai</Text></View>
+                <View style={styles.listContainer}>
+                    <FlatList
+                        data={res}
+                        renderItem={({ item }) => (
+                            <View style={styles.itemContainer}>
+                                <View style={styles.itemText}>
+                                    <Text style={styles.textContainer}>Kategorija</Text>
+                                    <Text style={styles.textContainer}>{item.time}</Text>
+                                </View>
+                                <View style={styles.itemResult}>
+                                    <Text style={styles.textContainer}>{item.totalCorrectAnswers}/{item.totalQuestions}</Text>
+                                    <ProgressBar style={styles.progressBar} progress={item.totalCorrectAnswers/item.totalQuestions} color={Colors.blue800} />
+                                </View>
+                            </View>
+                        )} />
+                </View>
+            </View>
+            <View style={styles.buttonBottomStyleContainer}>
+                <TouchableOpacity style={styles.bottomQuestionNavigationButton} onPress={() => navigation.navigate('Pagrindinis langas')}>
+                    <Text style={styles.textContainer}>Eiti į pagrindinį meniu</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
     );
 };
+
+
+const styles = StyleSheet.create(
+    {
+        mainContainer: {
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'white',
+
+        },
+        progressBar: {
+            width: 70,
+            height: 10,
+            borderRadius: 3,
+        },
+        tabContainer: {
+            height: 10,
+            backgroundColor: 'blue',
+            width: '100%',
+            borderTopLeftRadius: 5,
+            borderTopRightRadius: 5,
+
+        },
+        listContainer: {
+            flex: 8,
+        },
+        itemContainer: {
+            marginHorizontal: 20,
+            marginTop: 20,
+            borderRadius: 10,
+            padding: 15,
+            backgroundColor: 'white',
+            alignItems: 'flex-start',
+            borderWidth: 1,
+            borderColor: '#dadce0',
+            flexDirection: 'row',
+        },
+        itemText: {
+            flex: 7,
+            paddingLeft: 8,
+        },
+        itemResult: {
+            flex: 3,
+            alignItems: 'center',
+        },
+        headerText: {
+            paddingStart: 22,
+            marginTop: 8,
+            fontSize: 26,
+            color: 'black',
+        },
+        introContainer: {
+            flex: 1,
+            marginHorizontal: 20,
+            marginTop: 20,
+            borderRadius: 10,
+            backgroundColor: 'white',
+            alignItems: 'flex-start',
+            borderWidth: 1,
+            borderColor: '#dadce0',
+        },
+        resultsContainer: {
+            flex: 10,
+            width: '100%',
+        },
+        bottomQuestionNavigationButton: {
+            justifyContent: 'center',
+            flex: 1,
+            backgroundColor: '#6200EE',
+        },
+        buttonBottomStyleContainer: {
+            flex: 1,
+            flexDirection: 'column',
+        },
+        textContainer: {
+            margin: 0,
+            color: 'black',
+            fontSize: 18,
+        }
+    }
+);
 
 export default Results;

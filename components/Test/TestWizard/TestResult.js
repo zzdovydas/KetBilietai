@@ -22,7 +22,7 @@ const TestResult = ({ navigation, route }) => {
         var min = new Date().getMinutes(); //To get the Current Minutes
         var sec = new Date().getSeconds(); //To get the Current Seconds
   
-        return date + '-' + month + '-' + year + " " + hours + ':' + min + ':' + sec;
+        return year + '-' + month + '-' + date + " " + hours + ':' + min + ':' + sec;
   }
 
     function getCorrectAnswers() {
