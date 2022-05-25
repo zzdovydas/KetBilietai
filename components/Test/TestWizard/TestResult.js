@@ -59,7 +59,7 @@ const TestResult = ({ navigation, route }) => {
             console.log(res); // logs array
         });
 
-        result = {time: getCurrentDate(), totalQuestions: questionEdit.length, totalCorrectAnswers: correctAnswers}
+        let result = {time: getCurrentDate(), totalQuestions: questionEdit.length, totalCorrectAnswers: correctAnswers, category: questionEdit.category }
 
         res.push(result);
 
@@ -90,6 +90,7 @@ const TestResult = ({ navigation, route }) => {
             <View style={styles.questionContainer}>
                 <View style={styles.viewContainer}>
                     <Text style={styles.questionCountText}>Rezultatas {correctAnswers} iš {questions.length}</Text>
+                    <Text style={styles.questionCountText}>Kategorija {questions.category}</Text>
                 </View>
                 <View style={styles.reviewContainer}>
                     <FlatList

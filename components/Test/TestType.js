@@ -7,15 +7,15 @@ const TestType = ({navigation}) => {
     
     return (
         <View style={styles.viewContainer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Testas', {time: 10})} style={styles.buttonContainer}>
+            <TouchableOpacity onPress={() => navigation.navigate('Testas', {category: 'A'})} style={styles.buttonContainer}>
                 <Text style={styles.textContainer}>A, A1, A2, AM kategorija</Text>
                 <Icon name="motorcycle" size={55} color="#03DAC5" />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonContainer}>
+            <TouchableOpacity onPress={() => navigation.navigate('Testas', {category: 'B'})} style={styles.buttonContainer}>
                 <Text style={styles.textContainer}>B kategorija</Text>
                 <Icon name="car" size={55} color="#03DAC5" />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonContainer}>
+            <TouchableOpacity onPress={() => navigation.navigate('Testas', {category: 'C'})} style={styles.buttonContainer}>
                 <Text style={styles.textContainer}>C kategorija</Text>
                 <Icon name="truck" size={55} color="#03DAC5" />
             </TouchableOpacity>
