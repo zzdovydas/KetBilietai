@@ -9,26 +9,33 @@ const TestType = ({navigation}) => {
         <View style={styles.viewContainer}>
             <TouchableOpacity onPress={() => navigation.navigate('Testas', {time: 10})} style={styles.buttonContainer}>
                 <Text style={styles.textContainer}>A, A1, A2, AM kategorija</Text>
-                <Icon name="motorcycle" size={55} color="#03DAC5" />
+                <Icon name="motorcycle" size={55} color="#e4f3e5" />
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonContainer}>
                 <Text style={styles.textContainer}>B kategorija</Text>
-                <Icon name="car" size={55} color="#03DAC5" />
+                <Icon name="car" size={55} color="#e4f3e5" />
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonContainer}>
                 <Text style={styles.textContainer}>C kategorija</Text>
-                <Icon name="truck" size={55} color="#03DAC5" />
+                <Icon name="truck" size={55} color="#e4f3e5" />
             </TouchableOpacity>
-        </View>
+            <View style={styles.buttonBottomStyleContainer}>
+                <TouchableOpacity style={styles.bottomQuestionNavigationButton} onPress={() => navigation.navigate('Pagrindinis langas')}>
+                    <Text style={styles.navigationTextContainer}>Eiti į pagrindinį meniu</Text>
+                </TouchableOpacity>
+            </View>
+        </View>    
     );
 };
 
 const styles = StyleSheet.create(
     {
         viewContainer: {
+            flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            alignContent: 'center'
+            alignContent: 'center',
+            backgroundColor: '#e4f3e5',
         },
         buttonContainer: {
             alignItems: 'center',
@@ -36,7 +43,7 @@ const styles = StyleSheet.create(
             marginTop: 25,
             width: 180,
             height: 180,
-            backgroundColor: '#6200EE',
+            backgroundColor: '#4caf50',
             borderRadius: 12,
             
         },
@@ -45,6 +52,20 @@ const styles = StyleSheet.create(
             textAlign: 'center',
             color: 'white',
             fontSize: 20
+        },
+        bottomQuestionNavigationButton: {
+            justifyContent: 'center',
+            flex: 1,
+            backgroundColor: '#e4f3e5',
+        },
+        buttonBottomStyleContainer: {
+            flex: 1,
+            flexDirection: 'column',
+        },
+        navigationTextContainer: {
+            margin: 0,
+            color: '#575b57',
+            fontSize: 18,
         }
     }
 );

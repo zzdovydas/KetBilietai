@@ -13,25 +13,30 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        <Stack.Screen 
           name="Pagrindinis langas"
           component={Home}
+          options={{headerShown:false}}
         />
         <Stack.Screen
           name="Testai"
           component={TestType}
+          options={{headerShown:false}}
         />
         <Stack.Screen
           name="Testas"
           component={TestWizard}
+          options={{headerShown:false}}
         />
         <Stack.Screen
           name="Rezultatai"
           component={Results}
+          options={{headerShown:false}}
         />
         <Stack.Screen
           name="Testo rezultatas"
           component={TestResult}
+          options={{headerShown:false}}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -90,31 +90,33 @@ const styles = StyleSheet.create(
             flex: 4,
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: '#6200EE',
+            backgroundColor: '#e4f3e5',
 
         },
         viewContainer2: {
             flex: 4,
-            backgroundColor: '#6200FE'
+            backgroundColor: '#e4f3e5'
         },
         buttonUnselected: {
-            backgroundColor: '#0ba6ff',
+            backgroundColor: '#e4f3e5',
             paddingVertical: 15,
             marginTop: 5
         },
         buttonSelected: {
-            backgroundColor: '#00c06a',
+            backgroundColor: '#4caf50',
             paddingVertical: 15,
             marginTop: 5
         },
         imageContainer: {
             width: 360,
             height: 220,
+            backgroundColor: '#e4f3e5',
         },
         questionContainer: {
             flex: 18,
             flexDirection: "column",
-            justifyContent: 'flex-start'
+            justifyContent: 'flex-start',
+            color: '#575b57',
         },
         answerItemView: {
             marginTop: 20,
@@ -122,43 +124,43 @@ const styles = StyleSheet.create(
         },
         viewContainerQuestionCount: {
             height: 28,
-            backgroundColor: '#6200EE',
+            backgroundColor: '#4caf50',
         },
         bottomQuestionNavigationButton: {
             paddingTop: 5,
             paddingStart: 15,
             flex: 1,
-            backgroundColor: '#f3f3f3'
+            backgroundColor: '#e4f3e5'
         },
         bottomQuestionNavigationRightButton: {
             paddingTop: 5,
             paddingEnd: 15,
             flex: 1,
             alignItems: 'flex-end',
-            backgroundColor: '#f3f3f3'
+            backgroundColor: '#e4f3e5'
         },
         buttonBottomStyleContainer: {
             flex: 1,
             justifyContent: 'space-between',
             flexDirection: 'row',
             height: 280,
-            backgroundColor: '#6200FE'
+            backgroundColor: '#e4f3e5'
         },
         questionCountText: {
             textAlign: 'center',
-            color: 'white',
+            color: '#575b57',
             fontSize: 18
         },
         answerText: {
             marginStart: 20,
             textAlign: "left",
-            color: 'white',
+            color: '#575b57',
             fontSize: 20
         },
         textContainer: {
             margin: 5,
             textAlign: 'center',
-            color: 'white',
+            color: '#575b57',
             fontSize: 20
         }
     }

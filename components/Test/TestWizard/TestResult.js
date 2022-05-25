@@ -119,14 +119,14 @@ const styles = StyleSheet.create(
             flex: 1,
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: '#6200EE',
+            backgroundColor: '#4caf50',
 
         },
         reviewContainer: {
             flex: 10,
             justifyContent: 'space-between',
             flexDirection: 'row',
-            backgroundColor: '#6200FE'
+            backgroundColor: '#e4f3e5'
         },
         questionContainer: {
             flex: 1,
@@ -149,12 +149,12 @@ const styles = StyleSheet.create(
         },
         viewContainerQuestionCount: {
             height: 28,
-            backgroundColor: '#6200EE',
+            backgroundColor: '#e4f3e5',
         },
         bottomQuestionNavigationButton: {
             justifyContent: 'center',
             flex: 1,
-            backgroundColor: '#6200EE',
+            backgroundColor: '#e4f3e5',
         },
         buttonBottomStyleContainer: {
             flex: 1,
@@ -163,18 +163,18 @@ const styles = StyleSheet.create(
         questionCountText: {
             margin: 1,
             textAlign: 'center',
-            color: 'white',
+            color: '#575b57',
             fontSize: 18
         },
         answerText: {
             textAlign: "center",
-            color: 'white',
+            color: '#575b57',
             fontSize: 20
         },
         textContainer: {
             margin: 5,
             textAlign: 'center',
-            color: 'white',
+            color: '#575b57',
             fontSize: 18
         },
         questionItemGreen: {

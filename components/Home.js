@@ -28,22 +28,22 @@ const Home = ({ navigation }) => {
     };
 
     return (
-        <View>
+        <View style={styles.mainContainer}>
             {!loggedIn && <Login setUser={setUser} />}
             {loggedIn &&
                 <View>
                     <View style={styles.viewContainer}>
                         <TouchableOpacity onPress={() => navigation.navigate('Testai')} style={styles.buttonContainer}>
                             <Text style={styles.textContainer}>Spręsti testą</Text>
-                            <Icon name="play" size={65} color="#03DAC5" />
+                            <Icon name="play" size={65} color="#E4F3E5" />
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => navigation.navigate('Rezultatai', { list: [{ id: 1, name: 'hello' }, { id: 2, name: 'world' }] })} style={styles.buttonContainer}>
                             <Text style={styles.textContainer}>Peržiūrėti rezultatus</Text>
-                            <Icon name="sticky-note" size={65} color="#03DAC5" />
+                            <Icon name="sticky-note" size={65} color="#e4f3e5" />
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.buttonContainer}>
                             <Text style={styles.textContainer}>Pranešti apie klaidą</Text>
-                            <Icon name="flag" size={65} color="#03DAC5" />
+                            <Icon name="flag" size={65} color="#e4f3e5" />
                         </TouchableOpacity>
                     </View>
                     <View style={styles.logoutContainer}>
@@ -59,15 +59,20 @@ const Home = ({ navigation }) => {
 
 const styles = StyleSheet.create(
     {
+        mainContainer: {
+            flex: 1,
+        },
         logoutContainer: {
             justifyContent: 'center',
             alignItems: 'center',
-            alignContent: 'center'
+            alignContent: 'center',
+            backgroundColor: '#e4f3e5',
         },
         viewContainer: {
             justifyContent: 'center',
             alignItems: 'center',
-            alignContent: 'center'
+            alignContent: 'center',
+            backgroundColor: '#e4f3e5',
         },
         buttonContainer: {
             alignItems: 'center',
@@ -75,7 +80,7 @@ const styles = StyleSheet.create(
             marginTop: 20,
             width: 180,
             height: 180,
-            backgroundColor: '#6200EE',
+            backgroundColor: '#4caf50',
             borderRadius: 12,
 
         },

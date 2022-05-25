@@ -47,12 +47,12 @@ const styles = StyleSheet.create(
         viewContainer: {
             flex: 1,
             height: 28,
-            backgroundColor: '#6200EE',
+            backgroundColor: '#4caf50',
         },
         textContainer: {
             margin: 1,
             textAlign: 'center',
-            color: 'white',
+            color: '#575b57',
             fontSize: 18
         }
     }

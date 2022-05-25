@@ -41,7 +41,7 @@ const Results = ({ navigation, route }) => {
                                 </View>
                                 <View style={styles.itemResult}>
                                     <Text style={styles.textContainer}>{item.totalCorrectAnswers}/{item.totalQuestions}</Text>
-                                    <ProgressBar style={styles.progressBar} progress={item.totalCorrectAnswers/item.totalQuestions} color={Colors.blue800} />
+                                    <ProgressBar style={styles.progressBar} progress={item.totalCorrectAnswers/item.totalQuestions} color={Colors.green600} />
                                 </View>
                             </View>
                         )} />
@@ -63,7 +63,7 @@ const styles = StyleSheet.create(
             flex: 1,
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: 'white',
+            backgroundColor: '#e4f3e5',
 
         },
         progressBar: {
@@ -73,7 +73,7 @@ const styles = StyleSheet.create(
         },
         tabContainer: {
             height: 10,
-            backgroundColor: 'blue',
+            backgroundColor: '#4caf50',
             width: '100%',
             borderTopLeftRadius: 5,
             borderTopRightRadius: 5,
@@ -96,6 +96,7 @@ const styles = StyleSheet.create(
         itemText: {
             flex: 7,
             paddingLeft: 8,
+            color: '#575b57',
         },
         itemResult: {
             flex: 3,
@@ -105,7 +106,7 @@ const styles = StyleSheet.create(
             paddingStart: 22,
             marginTop: 8,
             fontSize: 26,
-            color: 'black',
+            color: '#575b57',
         },
         introContainer: {
             flex: 1,
@@ -124,7 +125,7 @@ const styles = StyleSheet.create(
         bottomQuestionNavigationButton: {
             justifyContent: 'center',
             flex: 1,
-            backgroundColor: '#6200EE',
+            backgroundColor: '#e4f3e5',
         },
         buttonBottomStyleContainer: {
             flex: 1,
@@ -132,7 +133,7 @@ const styles = StyleSheet.create(
         },
         textContainer: {
             margin: 0,
-            color: 'black',
+            color: '#575b57',
             fontSize: 18,
         }
     }
