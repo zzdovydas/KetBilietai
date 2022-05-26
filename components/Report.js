@@ -23,19 +23,17 @@ const postReport = (text) => {
     if (result != null)
         res = result;
 
-    console.log(res + "     " + text); // logs array
 });
-    // fetch('http://5.20.238.159:5271/report/storereport', {
-    //     method: 'POST',
-    //     headers: {
-    //         Accept: 'application/json',
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //         gmail: res.email,
-    //         message: text
-    //     })
-    // });
+    fetch('http://5.20.238.159:5271/report/storereport', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "gmail": res.user.email,
+            "message": text
+        })
+    });
 };
 
     return (
