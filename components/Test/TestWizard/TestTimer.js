@@ -27,7 +27,6 @@ const TestTimer = ({ navigation, timeUntil }) => {
                 console.log('passed');
             }
             else {
-                console.log(timeStr);
                 setTimeStr(secondsToHms(timeLeft));
             }
         }, 1000);

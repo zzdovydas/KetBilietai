@@ -36,12 +36,12 @@ const Results = ({ navigation, route }) => {
                         renderItem={({ item }) => (
                             <View style={styles.itemContainer}>
                                 <View style={styles.itemText}>
-                                    <Text style={styles.textContainer}>Kategorija</Text>
+                                    <Text style={styles.textContainer}>Kategorija {item.category}</Text>
                                     <Text style={styles.textContainer}>{item.time}</Text>
                                 </View>
                                 <View style={styles.itemResult}>
                                     <Text style={styles.textContainer}>{item.totalCorrectAnswers}/{item.totalQuestions}</Text>
-                                    <ProgressBar style={styles.progressBar} progress={item.totalCorrectAnswers/item.totalQuestions} color={Colors.green600} />
+                                    <ProgressBar style={styles.progressBar} progress={item.totalCorrectAnswers/item.totalQuestions} color={((item.totalCorrectAnswers/item.totalQuestions)>=0.8) ? Colors.green600 : Colors.red600} />
                                 </View>
                             </View>
                         )} />

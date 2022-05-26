@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MMKVLoader } from "react-native-mmkv-storage";
-import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
+import { Alert, View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
 import { Button, TextInput } from "react-native-paper";
 import { Dimensions } from 'react-native';
 
@@ -33,6 +33,25 @@ const postReport = (text) => {
             "gmail": res.user.email,
             "message": text
         })
+        
+    }).then((response) => {Alert.alert(
+            "Pranešimas išsiųstas",
+            "Apie klaidą buvo sėkmingai informuota, dėkojame :)",
+            [
+              { text: "OK"}
+            ]
+          );
+
+      return true;
+
+        })
+
+    .catch((error) => {
+
+      console.error(error);
+
+      return false;
+
     });
 };
 

@@ -8,7 +8,7 @@ const TestWizard = ({ navigation, route }) => {
     const futureTime = new Date().getTime() / 1000 + 1802;
 
     const getMoviesFromApi = (questions) => {
-        fetch('http://5.20.238.159:5271/question/getrandquestions?questionCount=30&category=' + route.params.category)
+        fetch('http://5.20.238.159:5271/question/getrandquestions?questionCount=' + route.params.questionCount + '&category=' + route.params.category)
           .then((response) => response.json())
           .then((json) => {
             json.category = route.params.category;
@@ -41,6 +41,7 @@ const TestWizard = ({ navigation, route }) => {
         <View style={{flexDirection: 'column', flex: 1}}>
             <TestTimer navigation={navigation} timeUntil={futureTime} />
             <TestQuestion navigation={navigation} questions={questions} page={changeQuestionIndex}/>
+            
         </View>
     );
 };
