@@ -54,7 +54,7 @@ const styles = StyleSheet.create(
             textAlign: 'center',
             color: '#575b57',
             fontSize: 18
-        }
+        },
     }
 );
 

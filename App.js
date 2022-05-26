@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from "./components/Home.js";
 import Results from "./components/Results.js";
+import Report from "./components/Report.js";
 import TestType from "./components/Test/TestType.js";
 import { NavigationContainer } from '@react-navigation/native';
 import TestWizard from "./components/Test/TestWizard/TestWizard.js";
@@ -36,6 +37,11 @@ const App = () => {
         <Stack.Screen
           name="Testo rezultatas"
           component={TestResult}
+          options={{headerShown:false}}
+        />
+        <Stack.Screen
+          name="Pranesimai"
+          component={Report}
           options={{headerShown:false}}
         />
       </Stack.Navigator>

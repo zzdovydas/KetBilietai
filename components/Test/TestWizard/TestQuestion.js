@@ -36,7 +36,7 @@ const TestQuestion = ({ navigation, questions, page }) => {
     return (
         <View style={styles.questionContainer}>
             <View style={styles.viewContainerQuestionCount}>
-                <Text style={styles.questionCountText}>Klausimas: {(questionIndex + 1)} iš {questions.length}</Text>
+                <Text style={styles.questionCountText}>{(questionIndex + 1)}/{questions.length}</Text>
             </View>
             <View style={styles.viewContainer}>
                 {questions[questionIndex].questioN_IMG_URL != "" &&
@@ -67,6 +67,12 @@ const TestQuestion = ({ navigation, questions, page }) => {
                         <Icon name="arrow-left" size={35} />
                     </TouchableOpacity>
                 }
+                {questionIndex != 0 &&
+                    <TouchableOpacity style={styles.bottomQuestionNavigationMiddleButton} onPress={() => navigation.navigate('Pagrindinis langas')}>
+                        <Text>Nutraukti</Text>
+                        <Icon name="close" size={35} />
+                    </TouchableOpacity>
+                }
                 {questionIndex != (questions.length - 1) &&
                     <TouchableOpacity style={styles.bottomQuestionNavigationRightButton} onPress={() => setPage(1)}>
                         <Text>Kitas klausimas</Text>
@@ -87,15 +93,15 @@ const TestQuestion = ({ navigation, questions, page }) => {
 const styles = StyleSheet.create(
     {
         viewContainer: {
-            flex: 4,
+            flex: 5,
             alignItems: 'center',
             justifyContent: 'center',
             backgroundColor: '#e4f3e5',
 
         },
         viewContainer2: {
-            flex: 4,
-            backgroundColor: '#e4f3e5'
+            flex: 3,
+            backgroundColor: '#e4f3e5',
         },
         buttonUnselected: {
             backgroundColor: '#e4f3e5',
@@ -132,6 +138,12 @@ const styles = StyleSheet.create(
             flex: 1,
             backgroundColor: '#e4f3e5'
         },
+        bottomQuestionNavigationMiddleButton: {
+            paddingTop: 5,
+            flex: 1,
+            alignItems: 'center',
+            backgroundColor: '#e4f3e5'
+        },
         bottomQuestionNavigationRightButton: {
             paddingTop: 5,
             paddingEnd: 15,
@@ -152,10 +164,11 @@ const styles = StyleSheet.create(
             fontSize: 18
         },
         answerText: {
-            marginStart: 20,
+            marginStart: 10,
             textAlign: "left",
             color: '#575b57',
-            fontSize: 20
+            fontSize: 20,
+            paddingRight: 35,
         },
         textContainer: {
             margin: 5,

@@ -41,7 +41,7 @@ const Home = ({ navigation }) => {
                             <Text style={styles.textContainer}>Peržiūrėti rezultatus</Text>
                             <Icon name="sticky-note" size={65} color="#e4f3e5" />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonContainer}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Pranesimai')} style={styles.buttonContainer}>
                             <Text style={styles.textContainer}>Pranešti apie klaidą</Text>
                             <Icon name="flag" size={65} color="#e4f3e5" />
                         </TouchableOpacity>
