@@ -11,4 +11,11 @@ Features:
 * Different questions based on category that was chosen (questions for motorcycle, car, truck license).
 
 
-<img src="https://user-images.githubusercontent.com/60687269/154676733-29acc35f-4d43-4eaa-b5f2-e40a197a4f89.png" width="250">
+
+
+<img src="https://user-images.githubusercontent.com/60687269/170602941-72d016ea-33bd-4d1d-84dd-feac3faa600b.PNG" width="250">
+<img src="https://user-images.githubusercontent.com/60687269/170602956-82dfb769-b4d0-45d3-94c4-794a6111f8bb.PNG" width="250">
+<img src="https://user-images.githubusercontent.com/60687269/170602960-8543b216-18dd-4ec1-aee3-0f2ae9870122.PNG" width="250">
+<img src="https://user-images.githubusercontent.com/60687269/170602967-5696184d-4f33-42bc-8591-734e11622e7c.PNG" width="250">
+<img src="https://user-images.githubusercontent.com/60687269/170602969-82556521-6317-4725-8804-b4ce1779925e.PNG" width="250">
+<img src="https://user-images.githubusercontent.com/60687269/170602971-fa8bc24e-7dab-47ba-8d37-d26869ed074c.PNG" width="250">
