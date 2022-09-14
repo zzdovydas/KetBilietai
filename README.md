@@ -3,7 +3,7 @@ React native projektas
 KET bilietų aplikacija
 
 Features:
-* Google sign-in
+* Google sign-in (Removed for safety reasons)
 * Modern, intuitive design
 * Exam data is retrieved from API. This way application occupies less space.
 * Question shuffling. Each time user gets different or shuffled questions.
